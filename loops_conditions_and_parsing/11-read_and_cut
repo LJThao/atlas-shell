@@ -2,9 +2,7 @@
 # This script is displaying a Bash script that displays the content of the file /etc/passwd.
 
 FILENAME="/etc/passwd"
-while IFS=: read -r username userid homedir
+while IFS=: read -r username password userid groupid comment homedir cmdshell
 	do
-		echo "$username"
-		echo "$userid"
-		echo "$homedir"
+		echo "$username, $userid, $comment $homedir"
 	done < $FILENAME
